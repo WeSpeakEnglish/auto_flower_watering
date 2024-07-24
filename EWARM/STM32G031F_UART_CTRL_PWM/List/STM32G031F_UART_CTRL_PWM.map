@@ -1,0 +1,354 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.2.320/W64 for ARM                  25/Jan/2024  16:44:47
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Exe\STM32G031F_UART_CTRL_PWM.out
+#    Map file     =
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\List\STM32G031F_UART_CTRL_PWM.map
+#    Command line =
+#        -f
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Exe\STM32G031F_UART_CTRL_PWM.out.rsp
+#        (C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\User\Core\gpio.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\User\Core\main.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\User\Core\nortos.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\EWARM\startup_stm32g031xx.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\User\Core\stm32g0xx_it.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_dma.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_exti.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_gpio.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_pwr.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_rcc.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_tim.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_usart.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_utils.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\CMSIS\system_stm32g0xx.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\User\Core\tim.o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\User\Core\usart.o
+#        --no_out_extension -o
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Exe\STM32G031F_UART_CTRL_PWM.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\List\STM32G031F_UART_CTRL_PWM.map
+#        --config C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM/stm32g031xx_flash.icf
+#        --semihosting --entry __iar_program_start --inline --vfe --text_out
+#        locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'1fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0xc0
+  .intvec            ro code   0x800'0000    0xc0  startup_stm32g031xx.o [1]
+                             - 0x800'00c0    0xc0
+
+"P1":                                      0x10d1
+  .text              ro code   0x800'00c0   0x3ec  stm32g0xx_ll_tim.o [4]
+  .text              ro code   0x800'04ac   0x2b8  main.o [2]
+  .text              ro code   0x800'0764    0xae  I32DivModFast.o [6]
+  .text              ro code   0x800'0812    0x3e  packbits_init_single.o [6]
+  .text              ro code   0x800'0850    0x88  gpio.o [2]
+  .text              ro code   0x800'08d8   0x124  usart.o [2]
+  .text              ro code   0x800'09fc   0x19c  tim.o [2]
+  .text              ro code   0x800'0b98    0x9c  nortos.o [2]
+  .text              ro code   0x800'0c34    0x28  stm32g0xx_ll_utils.o [4]
+  .text              ro code   0x800'0c5c    0x14  memset.o [6]
+  .text              ro code   0x800'0c70    0xa6  stm32g0xx_ll_gpio.o [4]
+  .text              ro code   0x800'0d16     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0d18    0xe0  stm32g0xx_ll_usart.o [4]
+  .text              ro code   0x800'0df8    0x4e  ABImemset.o [6]
+  .text              ro code   0x800'0e46     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0e48   0x134  stm32g0xx_ll_rcc.o [4]
+  .text              ro code   0x800'0f7c    0x50  stm32g0xx_it.o [2]
+  .rodata            const     0x800'0fcc    0x40  system_stm32g0xx.o [3]
+  .text              ro code   0x800'100c    0x3c  zero_init3.o [6]
+  .rodata            const     0x800'1048    0x30  stm32g0xx_ll_usart.o [4]
+  .text              ro code   0x800'1078    0x28  data_init.o [6]
+  .iar.init_table    const     0x800'10a0    0x20  - Linker created -
+  .rodata            const     0x800'10c0    0x20  system_stm32g0xx.o [3]
+  .text              ro code   0x800'10e0    0x1e  cmain.o [6]
+  .text              ro code   0x800'10fe     0x8  exit.o [5]
+  .text              ro code   0x800'1106     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1108     0xa  cexit.o [6]
+  .text              ro code   0x800'1112     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1114    0x14  exit.o [7]
+  .text              ro code   0x800'1128    0x1c  cstartup_M.o [6]
+  .text              ro code   0x800'1144    0x10  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1154     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1156     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1158     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'115a     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'115c     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'115e     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1160     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1162     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1164     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1166     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1168     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'116a     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'116c     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'116e     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1170     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1172     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1174     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1176     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1178     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'117a     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'117c     0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'1180     0x2  system_stm32g0xx.o [3]
+  .rodata            const     0x800'1182     0x0  zero_init3.o [6]
+  .rodata            const     0x800'1182     0x0  packbits_init_single.o [6]
+  Initializer bytes  const     0x800'1182     0xf  <for P2-1>
+                             - 0x800'1191  0x10d1
+
+"P2", part 1 of 3:                           0x30
+  P2-1                        0x2000'0000    0x30  <Init block>
+    .data            inited   0x2000'0000    0x2c  main.o [2]
+    .data            inited   0x2000'002c     0x4  system_stm32g0xx.o [3]
+                            - 0x2000'0030    0x30
+
+"P2", part 2 of 3:                           0x94
+  .bss               zero     0x2000'0030    0x48  nortos.o [2]
+  .bss               zero     0x2000'0078    0x48  nortos.o [2]
+  .bss               zero     0x2000'00c0     0x4  main.o [2]
+                            - 0x2000'00c4    0x94
+
+"P2", part 3 of 3:                          0x400
+  CSTACK                      0x2000'00c8   0x400  <Block>
+    CSTACK           uninit   0x2000'00c8   0x400  <Block tail>
+                            - 0x2000'04c8   0x400
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'1191   0x800'ffff  0xee6f
+  0x2000'00c4  0x2000'00c7     0x4
+  0x2000'04c8  0x2000'1fff  0x1b38
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x94:
+          0x2000'0030  0x94
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0xf (31% of destination):
+           0x800'1182   0xf
+    1 destination range, total size 0x30:
+          0x2000'0000  0x30
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\EWARM: [1]
+    startup_stm32g031xx.o       258
+    -------------------------------------------------
+    Total:                      258
+
+C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\User\Core: [2]
+    gpio.o                      136
+    main.o                      696       13       48
+    nortos.o                    156               144
+    stm32g0xx_it.o               80
+    tim.o                       412
+    usart.o                     292
+    -------------------------------------------------
+    Total:                    1'772       13      192
+
+C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\CMSIS: [3]
+    system_stm32g0xx.o            2       98        4
+    -------------------------------------------------
+    Total:                        2       98        4
+
+C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\STM32G0xx_HAL_Driver: [4]
+    stm32g0xx_ll_gpio.o         166
+    stm32g0xx_ll_rcc.o          308
+    stm32g0xx_ll_tim.o        1'004
+    stm32g0xx_ll_usart.o        224       48
+    stm32g0xx_ll_utils.o         40
+    -------------------------------------------------
+    Total:                    1'742       48
+
+dl6M_tln.a: [5]
+    exit.o                        8
+    -------------------------------------------------
+    Total:                        8
+
+rt6M_tl.a: [6]
+    ABImemset.o                  78
+    I32DivModFast.o             174
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 28
+    data_init.o                  40
+    memset.o                     20
+    packbits_init_single.o       62
+    zero_init3.o                 60
+    -------------------------------------------------
+    Total:                      502
+
+shb_l.a: [7]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                          2
+    Linker created                        32    1'024
+-----------------------------------------------------
+    Grand Total:              4'306      191    1'220
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'10a0          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'10c0          --   Gb  - Linker created -
+?main                    0x800'10e1         Code  Gb  cmain.o [6]
+AHBPrescTable            0x800'0fcc   0x40  Data  Gb  system_stm32g0xx.o [3]
+APBPrescTable            0x800'10c0   0x20  Data  Gb  system_stm32g0xx.o [3]
+CSTACK$$Base            0x2000'00c8          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'04c8          --   Gb  - Linker created -
+CountTim1P              0x2000'0020    0x4  Data  Gb  main.o [2]
+F1_Queue                0x2000'0038   0x40  Data  Gb  nortos.o [2]
+F1_QueueIni              0x800'0b9b    0xa  Code  Gb  nortos.o [2]
+F1_first                0x2000'0034    0x4  Data  Gb  nortos.o [2]
+F1_last                 0x2000'0030    0x4  Data  Gb  nortos.o [2]
+F1_pull                  0x800'0bc3   0x10  Code  Gb  nortos.o [2]
+F1_push                  0x800'0ba5   0x1e  Code  Gb  nortos.o [2]
+F2_Queue                0x2000'0080   0x40  Data  Gb  nortos.o [2]
+F2_QueueIni              0x800'0bd5    0xa  Code  Gb  nortos.o [2]
+F2_first                0x2000'007c    0x4  Data  Gb  nortos.o [2]
+F2_last                 0x2000'0078    0x4  Data  Gb  nortos.o [2]
+F2_pull                  0x800'0bff    0xe  Code  Gb  nortos.o [2]
+HardFault_Handler        0x800'0f7f    0x2  Code  Gb  stm32g0xx_it.o [2]
+LL_GPIO_Init             0x800'0c71   0xa6  Code  Gb  stm32g0xx_ll_gpio.o [4]
+LL_Init1msTick           0x800'0c35   0x1a  Code  Gb  stm32g0xx_ll_utils.o [4]
+LL_RCC_GetSystemClocksFreq
+                         0x800'0e49   0x2a  Code  Gb  stm32g0xx_ll_rcc.o [4]
+LL_RCC_GetUSARTClockFreq
+                         0x800'0e73   0x6e  Code  Gb  stm32g0xx_ll_rcc.o [4]
+LL_SetSystemCoreClock    0x800'0c4f    0x6  Code  Gb  stm32g0xx_ll_utils.o [4]
+LL_TIM_BDTR_Init         0x800'040d   0x6a  Code  Gb  stm32g0xx_ll_tim.o [4]
+LL_TIM_Init              0x800'00c1   0x7a  Code  Gb  stm32g0xx_ll_tim.o [4]
+LL_TIM_OC_Init           0x800'0151  0x272  Code  Gb  stm32g0xx_ll_tim.o [4]
+LL_USART_Init            0x800'0d19   0xc2  Code  Gb  stm32g0xx_ll_usart.o [4]
+MX_GPIO_Init             0x800'0851   0x88  Code  Gb  gpio.o [2]
+MX_TIM14_Init            0x800'0b0d   0x5a  Code  Gb  tim.o [2]
+MX_TIM1_Init             0x800'09fd  0x110  Code  Gb  tim.o [2]
+MX_USART1_UART_Init      0x800'08d9  0x124  Code  Gb  usart.o [2]
+NMI_Handler              0x800'0f7d    0x2  Code  Gb  stm32g0xx_it.o [2]
+PendSV_Handler           0x800'0f83    0x2  Code  Gb  stm32g0xx_it.o [2]
+RCC_GetPCLK1ClockFreq    0x800'0f55   0x16  Code  Lc  stm32g0xx_ll_rcc.o [4]
+RCC_GetSystemClockFreq   0x800'0eff   0x52  Code  Lc  stm32g0xx_ll_rcc.o [4]
+Region$$Table$$Base      0x800'10a0          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'10c0          --   Gb  - Linker created -
+SVC_Handler              0x800'0f81    0x2  Code  Gb  stm32g0xx_it.o [2]
+SimpleF1                 0x800'0b99    0x2  Code  Gb  nortos.o [2]
+SimpleF2                 0x800'0bd3    0x2  Code  Gb  nortos.o [2]
+SysTick_Handler          0x800'0f85    0x2  Code  Gb  stm32g0xx_it.o [2]
+SystemClock_Config       0x800'067d   0x42  Code  Gb  main.o [2]
+SystemCoreClock         0x2000'002c    0x4  Data  Gb  system_stm32g0xx.o [3]
+SystemInit               0x800'1181    0x2  Code  Gb  system_stm32g0xx.o [3]
+TIM14_IRQHandler         0x800'0fa3   0x10  Code  Gb  stm32g0xx_it.o [2]
+TIM14_Reload_Callback    0x800'06e5   0x24  Code  Gb  main.o [2]
+TIM14_Reload_Callback::count
+                        0x2000'00c0    0x4  Data  Lc  main.o [2]
+TIM1_CC_IRQHandler       0x800'0f87   0x1c  Code  Gb  stm32g0xx_it.o [2]
+USART1_IRQHandler        0x800'0fc5    0x8  Code  Gb  stm32g0xx_it.o [2]
+USART_CharReception_Callback
+                         0x800'06bf   0x26  Code  Gb  main.o [2]
+USART_CharReception_Callback::bytes
+                        0x2000'0028    0x4  Data  Lc  main.o [2]
+USART_PRESCALER_TAB      0x800'1048   0x30  Data  Lc  stm32g0xx_ll_usart.o [4]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x2000'1fff         Data  Gb  <internal module>
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x2000'0000         Data  Gb  <internal module>
+__aeabi_memset           0x800'0df9         Code  Gb  ABImemset.o [6]
+__aeabi_uidiv            0x800'0765         Code  Gb  I32DivModFast.o [6]
+__aeabi_uidivmod         0x800'0765         Code  Gb  I32DivModFast.o [6]
+__cmain                  0x800'10e1         Code  Gb  cmain.o [6]
+__exit                   0x800'1115   0x14  Code  Gb  exit.o [7]
+__iar_Memset4_word       0x800'0e19         Code  Gb  ABImemset.o [6]
+__iar_Memset_word        0x800'0e05         Code  Gb  ABImemset.o [6]
+__iar_data_init3         0x800'1079   0x28  Code  Gb  data_init.o [6]
+__iar_packbits_init_single3
+                         0x800'0813   0x3e  Code  Gb  packbits_init_single.o [6]
+__iar_program_start      0x800'1129         Code  Gb  cstartup_M.o [6]
+__iar_zero_init3         0x800'100d   0x3c  Code  Gb  zero_init3.o [6]
+__vector_table           0x800'0000         Data  Gb  startup_stm32g031xx.o [1]
+_call_main               0x800'10ed         Code  Gb  cmain.o [6]
+_exit                    0x800'1109         Code  Gb  cexit.o [6]
+exit                     0x800'10ff    0x8  Code  Gb  exit.o [5]
+main                     0x800'05bf   0xbe  Code  Gb  main.o [2]
+memset                   0x800'0c5d   0x14  Code  Gb  memset.o [6]
+receiveBuffer           0x2000'0000   0x20  Data  Gb  main.o [2]
+runCmdFromUart           0x800'04ad  0x112  Code  Gb  main.o [2]
+runCmdFromUart::pulses  0x2000'0024    0x4  Data  Lc  main.o [2]
+
+
+[1] = C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\EWARM
+[2] = C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Application\User\Core
+[3] = C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\CMSIS
+[4] = C:\PRJ\STM32G031F_UART_CTRL_PWM\EWARM\STM32G031F_UART_CTRL_PWM\Obj\Drivers\STM32G0xx_HAL_Driver
+[5] = dl6M_tln.a
+[6] = rt6M_tl.a
+[7] = shb_l.a
+
+  4'306 bytes of readonly  code memory
+    191 bytes of readonly  data memory
+  1'220 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

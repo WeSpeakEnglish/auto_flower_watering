@@ -1,0 +1,340 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.2.320/W64 for ARM                  24/Jul/2024  16:27:19
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Exe\STM32G031F.out
+#    Map file     =
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\List\STM32G031F.map
+#    Command line =
+#        -f C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Exe\STM32G031F.out.rsp
+#        (C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\User\Core\adc.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\User\Core\gpio.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\User\Core\main.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\User\Core\nortos.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\EWARM\startup_stm32g031xx.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\User\Core\stm32g0xx_it.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_adc.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_dma.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_exti.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_gpio.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_pwr.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_rcc.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_tim.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\STM32G0xx_HAL_Driver\stm32g0xx_ll_utils.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\CMSIS\system_stm32g0xx.o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\User\Core\tim.o
+#        --no_out_extension -o
+#        C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Exe\STM32G031F.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map C:\PRJ\auto_flower_watering\EWARM\STM32G031F\List\STM32G031F.map
+#        --config C:\PRJ\auto_flower_watering\EWARM/stm32g031xx_flash.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x800'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'1fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xc0
+  .intvec            ro code   0x800'0000   0xc0  startup_stm32g031xx.o [1]
+                             - 0x800'00c0   0xc0
+
+"P1":                                      0x8fd
+  .text              ro code   0x800'00c0  0x1c0  main.o [2]
+  .text              ro code   0x800'0280   0x8c  gpio.o [2]
+  .text              ro code   0x800'030c   0x6c  tim.o [2]
+  .text              ro code   0x800'0378  0x140  adc.o [2]
+  .text              ro code   0x800'04b8   0x84  nortos.o [2]
+  .text              ro code   0x800'053c   0x50  stm32g0xx_ll_utils.o [4]
+  .text              ro code   0x800'058c   0x5e  I32DivMod.o [6]
+  .text              ro code   0x800'05ea   0x14  memset.o [6]
+  .text              ro code   0x800'05fe   0x3e  packbits_init_single.o [6]
+  .text              ro code   0x800'063c   0xa4  stm32g0xx_ll_gpio.o [4]
+  .text              ro code   0x800'06e0   0x8c  stm32g0xx_ll_tim.o [4]
+  .text              ro code   0x800'076c   0xa4  stm32g0xx_ll_adc.o [4]
+  .text              ro code   0x800'0810    0x2  IntDivZer.o [6]
+  .text              ro code   0x800'0812    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0814   0x4e  ABImemset.o [6]
+  .text              ro code   0x800'0862   0x3c  zero_init3.o [6]
+  .text              ro code   0x800'089e    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'08a0   0x28  data_init.o [6]
+  .iar.init_table    const     0x800'08c8   0x20  - Linker created -
+  .text              ro code   0x800'08e8   0x20  stm32g0xx_it.o [2]
+  .text              ro code   0x800'0908   0x1e  cmain.o [6]
+  .text              ro code   0x800'0926    0x4  low_level_init.o [5]
+  .text              ro code   0x800'092a    0x8  exit.o [5]
+  .text              ro code   0x800'0932    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0934    0xa  cexit.o [6]
+  .text              ro code   0x800'093e    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0940   0x14  exit.o [7]
+  .text              ro code   0x800'0954   0x1c  cstartup_M.o [6]
+  .text              ro code   0x800'0970   0x10  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0980    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0982    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0984    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0986    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0988    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'098a    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'098c    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'098e    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0990    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0992    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0994    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0996    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'0998    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'099a    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'099c    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'099e    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'09a0    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'09a2    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'09a4    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'09a6    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'09a8    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'09aa    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'09ac    0x2  startup_stm32g031xx.o [1]
+  .text              ro code   0x800'09b0    0x2  system_stm32g0xx.o [3]
+  .rodata            const     0x800'09b2    0x0  zero_init3.o [6]
+  .rodata            const     0x800'09b2    0x0  packbits_init_single.o [6]
+  Initializer bytes  const     0x800'09b2    0xb  <for P2-1>
+                             - 0x800'09bd  0x8fd
+
+"P2", part 1 of 3:                          0x30
+  P2-1                        0x2000'0000   0x30  <Init block>
+    .data            inited   0x2000'0000   0x2c  main.o [2]
+    .data            inited   0x2000'002c    0x4  system_stm32g0xx.o [3]
+                            - 0x2000'0030   0x30
+
+"P2", part 2 of 3:                          0x90
+  .bss               zero     0x2000'0030   0x48  nortos.o [2]
+  .bss               zero     0x2000'0078   0x48  nortos.o [2]
+                            - 0x2000'00c0   0x90
+
+"P2", part 3 of 3:                         0x400
+  CSTACK                      0x2000'00c0  0x400  <Block>
+    CSTACK           uninit   0x2000'00c0  0x400  <Block tail>
+                            - 0x2000'04c0  0x400
+
+Unused ranges:
+
+         From           To    Size
+         ----           --    ----
+   0x800'09bd   0x800'ffff  0xf643
+  0x2000'04c0  0x2000'1fff  0x1b40
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x90:
+          0x2000'0030  0x90
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0xb (22% of destination):
+           0x800'09b2   0xb
+    1 destination range, total size 0x30:
+          0x2000'0000  0x30
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\EWARM: [1]
+    startup_stm32g031xx.o       262
+    -------------------------------------------------
+    Total:                      262
+
+C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\User\Core: [2]
+    adc.o                       320
+    gpio.o                      140
+    main.o                      448       10       44
+    nortos.o                    132               144
+    stm32g0xx_it.o               32
+    tim.o                       108
+    -------------------------------------------------
+    Total:                    1'180       10      188
+
+C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\CMSIS: [3]
+    system_stm32g0xx.o            2        1        4
+    -------------------------------------------------
+    Total:                        2        1        4
+
+C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\STM32G0xx_HAL_Driver: [4]
+    stm32g0xx_ll_adc.o          164
+    stm32g0xx_ll_gpio.o         164
+    stm32g0xx_ll_tim.o          140
+    stm32g0xx_ll_utils.o         80
+    -------------------------------------------------
+    Total:                      548
+
+dl6M_tln.a: [5]
+    exit.o                        8
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                       12
+
+rt6M_tl.a: [6]
+    ABImemset.o                  78
+    I32DivMod.o                  94
+    IntDivZer.o                   2
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 28
+    data_init.o                  40
+    memset.o                     20
+    packbits_init_single.o       62
+    zero_init3.o                 60
+    -------------------------------------------------
+    Total:                      424
+
+shb_l.a: [7]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                          2
+    Linker created                        32    1'024
+-----------------------------------------------------
+    Grand Total:              2'450       43    1'216
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'08c8          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'08e8          --   Gb  - Linker created -
+?main                    0x800'0909         Code  Gb  cmain.o [6]
+CSTACK$$Base            0x2000'00c0          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'04c0          --   Gb  - Linker created -
+F1_Queue                0x2000'0038   0x40  Data  Gb  nortos.o [2]
+F1_QueueIni              0x800'04bb    0x4  Code  Gb  nortos.o [2]
+F1_first                0x2000'0034    0x4  Data  Gb  nortos.o [2]
+F1_last                 0x2000'0030    0x4  Data  Gb  nortos.o [2]
+F1_pull                  0x800'04dd   0x10  Code  Gb  nortos.o [2]
+F1_push                  0x800'04bf   0x1e  Code  Gb  nortos.o [2]
+F2_Queue                0x2000'0080   0x40  Data  Gb  nortos.o [2]
+F2_QueueIni              0x800'04ed    0x2  Code  Gb  nortos.o [2]
+F2_first                0x2000'007c    0x4  Data  Gb  nortos.o [2]
+F2_last                 0x2000'0078    0x4  Data  Gb  nortos.o [2]
+HardFault_Handler        0x800'08eb    0x2  Code  Gb  stm32g0xx_it.o [2]
+LL_ADC_Init              0x800'076d   0x34  Code  Gb  stm32g0xx_ll_adc.o [4]
+LL_ADC_REG_Init          0x800'07a1   0x68  Code  Gb  stm32g0xx_ll_adc.o [4]
+LL_ADC_SetSamplingTimeCommonChannels
+                         0x800'0379   0x16  Code  Lc  adc.o [2]
+LL_GPIO_Init             0x800'063d   0xa4  Code  Gb  stm32g0xx_ll_gpio.o [4]
+LL_IOP_GRP1_EnableClock
+                         0x800'0281   0x16  Code  Lc  gpio.o [2]
+LL_Init1msTick           0x800'053d   0x1a  Code  Gb  stm32g0xx_ll_utils.o [4]
+LL_SetSystemCoreClock    0x800'057d    0x6  Code  Gb  stm32g0xx_ll_utils.o [4]
+LL_TIM_Init              0x800'06e1   0x70  Code  Gb  stm32g0xx_ll_tim.o [4]
+LL_mDelay                0x800'0557   0x26  Code  Gb  stm32g0xx_ll_utils.o [4]
+MX_ADC1_Init             0x800'038f  0x10a  Code  Gb  adc.o [2]
+MX_GPIO_Init             0x800'0297   0x6e  Code  Gb  gpio.o [2]
+MX_TIM14_Init            0x800'030d   0x6c  Code  Gb  tim.o [2]
+NMI_Handler              0x800'08e9    0x2  Code  Gb  stm32g0xx_it.o [2]
+PendSV_Handler           0x800'08ef    0x2  Code  Gb  stm32g0xx_it.o [2]
+Region$$Table$$Base      0x800'08c8          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'08e8          --   Gb  - Linker created -
+SVC_Handler              0x800'08ed    0x2  Code  Gb  stm32g0xx_it.o [2]
+SimpleF1                 0x800'04b9    0x2  Code  Gb  nortos.o [2]
+SysTick_Handler          0x800'08f1    0x2  Code  Gb  stm32g0xx_it.o [2]
+SystemClock_Config       0x800'01a7   0x50  Code  Gb  main.o [2]
+SystemCoreClock         0x2000'002c    0x4  Data  Gb  system_stm32g0xx.o [3]
+SystemInit               0x800'09b1    0x2  Code  Gb  system_stm32g0xx.o [3]
+TIM14_IRQHandler         0x800'08f3   0x10  Code  Gb  stm32g0xx_it.o [2]
+TIM14_Reload_Callback    0x800'01f7   0x48  Code  Gb  main.o [2]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x2000'1fff         Data  Gb  <internal module>
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x2000'0000         Data  Gb  <internal module>
+__aeabi_idiv0            0x800'0811         Code  Gb  IntDivZer.o [6]
+__aeabi_memset           0x800'0815         Code  Gb  ABImemset.o [6]
+__cmain                  0x800'0909         Code  Gb  cmain.o [6]
+__exit                   0x800'0941   0x14  Code  Gb  exit.o [7]
+__iar_Memset4_word       0x800'0835         Code  Gb  ABImemset.o [6]
+__iar_Memset_word        0x800'0821         Code  Gb  ABImemset.o [6]
+__iar_data_init3         0x800'08a1   0x28  Code  Gb  data_init.o [6]
+__iar_packbits_init_single3
+                         0x800'05ff   0x3e  Code  Gb  packbits_init_single.o [6]
+__iar_program_start      0x800'0955         Code  Gb  cstartup_M.o [6]
+__iar_small_idiv         0x800'058d         Code  Gb  I32DivMod.o [6]
+__iar_small_idivmod      0x800'058d         Code  Gb  I32DivMod.o [6]
+__iar_small_uidiv        0x800'05b5         Code  Gb  I32DivMod.o [6]
+__iar_small_uidivmod     0x800'05b5         Code  Gb  I32DivMod.o [6]
+__iar_zero_init3         0x800'0863   0x3c  Code  Gb  zero_init3.o [6]
+__low_level_init         0x800'0927    0x4  Code  Gb  low_level_init.o [5]
+__vector_table           0x800'0000         Data  Gb  startup_stm32g031xx.o [1]
+_call_main               0x800'0915         Code  Gb  cmain.o [6]
+_exit                    0x800'0935         Code  Gb  cexit.o [6]
+bufADC                  0x2000'0004   0x20  Data  Gb  main.o [2]
+count                   0x2000'0024    0x4  Data  Gb  main.o [2]
+evaluateMoisture         0x800'00f7   0x2c  Code  Gb  main.o [2]
+exit                     0x800'092b    0x8  Code  Gb  exit.o [5]
+main                     0x800'0123   0x84  Code  Gb  main.o [2]
+memset                   0x800'05eb   0x14  Code  Gb  memset.o [6]
+moistureIsLow           0x2000'0000    0x1  Data  Gb  main.o [2]
+readADC                  0x800'00c1   0x36  Code  Gb  main.o [2]
+readADC::i              0x2000'0028    0x4  Data  Lc  main.o [2]
+
+
+[1] = C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\EWARM
+[2] = C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Application\User\Core
+[3] = C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\CMSIS
+[4] = C:\PRJ\auto_flower_watering\EWARM\STM32G031F\Obj\Drivers\STM32G0xx_HAL_Driver
+[5] = dl6M_tln.a
+[6] = rt6M_tl.a
+[7] = shb_l.a
+
+  2'450 bytes of readonly  code memory
+     43 bytes of readonly  data memory
+  1'216 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
